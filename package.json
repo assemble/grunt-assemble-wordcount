@@ -1,0 +1,47 @@
+{
+  "name": "assemble-contrib-wordcount",
+  "description": "Assemble plugin for displaying a wordcount on blog posts or pages.",
+  "version": "0.1.0",
+  "homepage": "http://assemble.io",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "http://github.com/jonschlinkert/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/assemble/assemble-contrib-wordcount/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/assemble/assemble-contrib-wordcount.git"
+  },
+  "bugs": {
+    "url": "https://github.com/assemble/assemble-contrib-wordcount/issues"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "cheerio": "~0.12.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-readme": "~0.3.0"
+  },
+  "keywords": [
+    "assemble",
+    "assembleplugin",
+    "blog",
+    "post",
+    "wordcount",
+    "words",
+    "grunt"
+  ]
+}
