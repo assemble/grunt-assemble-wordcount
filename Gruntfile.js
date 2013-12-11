@@ -26,7 +26,9 @@ module.exports = function(grunt) {
     repos: {
       assemble: {
         options: {
-          path: '/orgs/assemble/'
+          username: 'assemble',
+          include: ['contrib'],
+          exclude: ['example', 'wordcount', 'rss']
         },
         files: {
           'docs/repos.json': ['repos?page=1&per_page=100']
@@ -48,6 +50,7 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-readme');
+  grunt.loadNpmTasks('grunt-repos');
 
 
   // By default, lint and run all tests.
