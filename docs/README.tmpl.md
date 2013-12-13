@@ -14,7 +14,7 @@
 ***
 
 ## Assemble plugins
-{%= _.include("related-repos.md") %}
+{%= _.include("related-repos-list.md") %}
 
 ## Contributing
 {%= _.contrib("contributing.md") %}

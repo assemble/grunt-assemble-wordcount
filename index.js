@@ -41,13 +41,15 @@ module.exports = function(params, callback) {
     var secs = sec + ' second' + (sec === 1 ? '' : 's');
     var est = (min > 0) ? mins + secs : secs;
 
+    opts.placement = opts.placement || 'prepend';
+
     // Render wordcount
     $('.label-wordcount').attr('data-wordcount', count);
-    $('.label-wordcount').append(String(count));
+    $('.label-wordcount')[opts.placement](String(count));
 
     // Render reading time
     $('.label-reading-time').attr('data-reading-time', est);
-    $('.label-reading-time').append(est);
+    $('.label-reading-time')[opts.placement](est);
 
     params.content = $.html();
   }
