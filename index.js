@@ -17,6 +17,12 @@ module.exports = function(params, callback) {
   var grunt = params.grunt;
   var opts = params.assemble.options.wordcount || {};
 
+  opts.placement     = opts.placement     || 'prepend';
+  opts.selector      = opts.selector      || '.wordcount';
+  opts.countSelector = opts.countSelector || '.label-wordcount';
+  opts.timeSelector  = opts.timeSelector  || '.label-reading-time';
+
+
   // Skip over the plugin if it isn't defined in the options.
   grunt.verbose.subhead('Running:'.bold, '"assemble-config-wordcount"');
   grunt.verbose.writeln('Stage:  '.bold, '"render:post:page"\n');
@@ -24,8 +30,8 @@ module.exports = function(params, callback) {
   // load current page content
   var $ = cheerio.load(params.content);
 
-  if($('.wordcount') && $('.wordcount').length > 0) {
-    var countable = $('.wordcount');
+  if($(opts.selector) && $(opts.selector).length > 0) {
+    var countable = $(opts.selector);
 
     // Strip HTML tags from content
     var content = countable.html().replace(/(<([^>]+)>)/ig, '');
@@ -41,15 +47,13 @@ module.exports = function(params, callback) {
     var secs = sec + ' second' + (sec === 1 ? '' : 's');
     var est = (min > 0) ? mins + secs : secs;
 
-    opts.placement = opts.placement || 'prepend';
-
     // Render wordcount
-    $('.label-wordcount').attr('data-wordcount', count);
-    $('.label-wordcount')[opts.placement](String(count));
+    $(opts.countSelector).attr('data-wordcount', count);
+    $(opts.countSelector)[opts.placement](String(count));
 
     // Render reading time
-    $('.label-reading-time').attr('data-reading-time', est);
-    $('.label-reading-time')[opts.placement](est);
+    $(opts.timeSelector).attr('data-reading-time', est);
+    $(opts.timeSelector)[opts.placement](est);
 
     params.content = $.html();
   }
