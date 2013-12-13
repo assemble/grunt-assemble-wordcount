@@ -1,5 +1,11 @@
+### speed
+Type: `Number`
+Default: `300`
+
+Average "words per minute" to use for calculating reading time. This plugin uses 300 as the default based on the averages listed in [this Forbes article](http://onforb.es/1crk3KF).
+
 ### seconds
-Type: `Booleand`
+Type: `Boolean`
 Default: `undefined`
 
 Define `seconds: true` in the option to display seconds and minutes. Example: `7 min, 47 sec`. (by default time is rendered in 1 minute increments, e.g. `8 min`).

@@ -1,7 +1,7 @@
 {
   "name": "assemble-contrib-wordcount",
-  "description": "Assemble plugin for displaying a wordcount on blog posts or pages.",
-  "version": "0.3.1",
+  "description": "Assemble plugin for displaying wordcount and average reading time on blog posts or pages.",
+  "version": "0.3.2",
   "homepage": "https://github.com/assemble/assemble-contrib-wordcount",
   "author": {
     "name": "Jon Schlinkert",

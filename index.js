@@ -17,6 +17,8 @@ module.exports = function(params, callback) {
   var grunt = params.grunt;
   var opts  = params.assemble.options.wordcount || {};
 
+  // See http://onforb.es/1crk3KF
+  opts.speed         = opts.speed         || 300;
   opts.seconds       = opts.seconds       || false;
   opts.placement     = opts.placement     || 'prepend';
   opts.selector      = opts.selector      || '.wordcount';
@@ -43,13 +45,13 @@ module.exports = function(params, callback) {
     // Calculate reading time
     var min, mins, sec, secs, est;
     if(opts.seconds === true) {
-      min = Math.floor(count / 200);
-      sec = Math.floor(count % 200 / (200 / 60));
+      min = Math.floor(count / opts.speed);
+      sec = Math.floor(count % opts.speed / (opts.speed / 60));
       mins = min + ' minute' + (min === 1 ? '' : 's') + ', ';
       secs = sec + ' second' + (sec === 1 ? '' : 's');
       est = (min > 0) ? mins + secs : secs;
     } else {
-      min = Math.ceil(count / 200);
+      min = Math.ceil(count / opts.speed);
       est = min + ' min';
     }
 
