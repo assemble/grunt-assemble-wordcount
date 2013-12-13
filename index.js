@@ -15,13 +15,13 @@ module.exports = function(params, callback) {
   'use strict';
 
   var grunt = params.grunt;
-  var opts = params.assemble.options.wordcount || {};
+  var opts  = params.assemble.options.wordcount || {};
 
+  opts.seconds       = opts.seconds       || false;
   opts.placement     = opts.placement     || 'prepend';
   opts.selector      = opts.selector      || '.wordcount';
   opts.countSelector = opts.countSelector || '.label-wordcount';
   opts.timeSelector  = opts.timeSelector  || '.label-reading-time';
-
 
   // Skip over the plugin if it isn't defined in the options.
   grunt.verbose.subhead('Running:'.bold, '"assemble-config-wordcount"');
@@ -41,11 +41,17 @@ module.exports = function(params, callback) {
     var count = matches !== null ? matches.length : 0;
 
     // Calculate reading time
-    var min = Math.floor(count / 200);
-    var sec = Math.floor(count % 200 / (200 / 60));
-    var mins = min + ' minute' + (min === 1 ? '' : 's') + ', ';
-    var secs = sec + ' second' + (sec === 1 ? '' : 's');
-    var est = (min > 0) ? mins + secs : secs;
+    var min, mins, sec, secs, est;
+    if(opts.seconds === true) {
+      min = Math.floor(count / 200);
+      sec = Math.floor(count % 200 / (200 / 60));
+      mins = min + ' minute' + (min === 1 ? '' : 's') + ', ';
+      secs = sec + ' second' + (sec === 1 ? '' : 's');
+      est = (min > 0) ? mins + secs : secs;
+    } else {
+      min = Math.ceil(count / 200);
+      est = min + ' min';
+    }
 
     // Render wordcount
     $(opts.countSelector).attr('data-wordcount', count);
