@@ -26,8 +26,8 @@ module.exports = function (assemble) {
     opts.timeSelector  = opts.timeSelector  || '.label-reading-time';
 
     // Skip over the plugin if it isn't defined in the options.
-    assemble.log.verbose('Running:'.bold, '"assemble-config-wordcount"');
-    assemble.log.verbose('Stage:  '.bold, '"render:post:page"\n');
+    assemble.log.debug('Running:'.bold, '"assemble-config-wordcount"');
+    assemble.log.debug('Stage:  '.bold, '"render:post:page"\n');
 
     // load current page content
     var $ = cheerio.load(params.component.content);
