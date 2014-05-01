@@ -2,6 +2,8 @@
 
 > Assemble plugin for displaying wordcount and average reading time on blog posts or pages.
 
+**Heads up!** v0.4.0 or greater of this plugin depend on Assemble v0.5.0. This plugin will not work with Assemble v0.4.0!
+
 ## Quickstart
 In the command line, run:
 
