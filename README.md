@@ -1,4 +1,4 @@
-# assemble-contrib-wordcount [![NPM version](https://badge.fury.io/js/assemble-contrib-wordcount.png)](http://badge.fury.io/js/assemble-contrib-wordcount) 
+# assemble-contrib-wordcount [![NPM version](https://badge.fury.io/js/assemble-contrib-wordcount.png)](http://badge.fury.io/js/assemble-contrib-wordcount)
 
 > Assemble plugin for displaying wordcount and average reading time on blog posts or pages.
 
@@ -9,7 +9,7 @@ In the command line, run:
 npm install assemble-contrib-wordcount --save
 ```
 
-Next, register the plugin with Assemble in your project's Gruntfile:
+Next, register the plugin with Assemble:
 
 ```js
 assemble: {
@@ -18,30 +18,19 @@ assemble: {
   }
 }
 ```
-You can also use the plugin with specific targets:
-
-```js
-assemble: {
-  foo: {
-    options: {
-      plugins: ['assemble-contrib-wordcount', 'other/plugins/*']
-    },
-    files: {'dist/': 'content/*.md'}
-  },
-  // The plugin won't run on this target
-  bar: {
-    files: {'dist/': 'templates/*.hbs'}
-  }
-}
-```
 
 Visit the [plugins docs](http://assemble.io/plugins/) for more info or for help getting started.
 
 
-
 ## Options
+#### speed
+Type: `Number`
+Default: `300`
+
+Average "words per minute" to use for calculating reading time. This plugin uses 300 as the default based on the averages listed in [this Forbes article](http://onforb.es/1crk3KF).
+
 #### seconds
-Type: `Booleand`
+Type: `Boolean`
 Default: `undefined`
 
 Define `seconds: true` in the option to display seconds and minutes. Example: `7 min, 47 sec`. (by default time is rendered in 1 minute increments, e.g. `8 min`).
@@ -69,7 +58,6 @@ Type: `String`
 Default: `.label-reading-time`
 
 The selector to use for the element that will render the estimated reading time.
-
 
 
 ## Usage Examples
@@ -111,16 +99,13 @@ The selector to use for the element that will render the estimated reading time.
 The default selector is `.wordcount`. You can change this in the options as follows:
 
 ```js
-assemble: {
-  options: {
-    plugins: ['assemble-contrib-wordcount'],
-    wordcount: {
-      selector: '.foo',
-      countSelector: '.bar'
-      timeSelector: '.baz'
-    }
-  },
-  files: {}
+options: {
+  plugins: ['assemble-contrib-wordcount'],
+  wordcount: {
+    selector: '.foo',
+    countSelector: '.bar'
+    timeSelector: '.baz'
+  }
 }
 ```
 And in your templates:
@@ -144,17 +129,14 @@ Then in `post.hbs`:
 
 #### Display seconds
 
-In the plugin's options in the Assemble task, define `seconds: true`:
+In the plugin's options, define `seconds: true`:
 
 ```js
-assemble: {
-  options: {
-    plugins: ['assemble-contrib-wordcount'],
-    wordcount: {
-      seconds: true
-    }
-  },
-  files: {}
+options: {
+  plugins: ['assemble-contrib-wordcount'],
+  wordcount: {
+    seconds: true
+  }
 }
 ```
 
@@ -204,33 +186,37 @@ Would result in:
 <span class="label-reading-time" data-reading-time="7 minutes, 48 seconds">Estimated reading time: 8 minutes</span>
 ```
 
-
 ***
 
 ## Assemble plugins
 Here are some related projects you might be interested in from the [Assemble](http://assemble.io) core team.
 
-+ [assemble-contrib-anchors](https://github.com/assemble/assemble-contrib-anchors): Assemble plugin for creating anchor tags from generated html. 
-+ [assemble-contrib-contextual](https://github.com/assemble/assemble-contrib-contextual): Generates a JSON file containing the context of each page. Basic plugin to help see what's happening in the build. 
-+ [assemble-contrib-decompress](https://github.com/assemble/assemble-contrib-decompress): Assemble plugin for extracting zip, tar and tar.gz archives.  
-+ [assemble-contrib-download](https://github.com/assemble/assemble-contrib-download): Assemble plugin for downloading files from GitHub. 
-+ [assemble-contrib-lunr](https://github.com/assemble/assemble-contrib-lunr): Assemble plugin for creating a search engine within your static site using lunr.js. 
-+ [assemble-contrib-markdown](https://github.com/assemble/assemble-contrib-markdown): Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble's markdown Handlebars helpers. Both are useful in different scenarios. 
-+ [assemble-contrib-permalinks](https://github.com/assemble/assemble-contrib-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more. 
-+ [assemble-contrib-sitemap](https://github.com/assemble/assemble-contrib-sitemap): Sitemap generator plugin for Assemble 
-+ [assemble-contrib-toc](https://github.com/assemble/assemble-contrib-toc): Create a table of contents in the generated HTML, using Cheerio.js 
++ [assemble-plugin-drafts](https://api.github.com/repos/assemble/assemble-plugin-drafts): Assemble plugin (v0.5.0) for preventing drafts from being rendered. 
++ [assemble-plugin-pagination](https://api.github.com/repos/assemble/assemble-plugin-pagination): WIP this plugin isn't ready for use! 
++ [assemble-plugin-rss](https://api.github.com/repos/assemble/assemble-plugin-rss): NOT Published yet! This plugin isn't ready for prime time! Plugin for creating RSS feeds with Assemble, the static site generator for Node.js, Grunt.js and Yeoman.  
++ [generator-plugin](https://api.github.com/repos/assemble/generator-plugin): Yeoman generator for Assemble plugins.  
++ [grunt-init-assemble-plugin](https://api.github.com/repos/assemble/grunt-init-assemble-plugin): Generate a plugin for Assemble. 
++ [plugins](https://api.github.com/repos/assemble/plugins): Collection of contrib plugins maintained by the Assemble core team. 
++ [assemble-contrib-lunr](https://api.github.com/repos/assemble/assemble-contrib-lunr): Assemble plugin for creating a search engine within your static site using lunr.js. 
++ [assemble-contrib-lunr-examples](https://api.github.com/repos/assemble/assemble-contrib-lunr-examples): Usages examples for assemble-contrib-lunr, a search plugin for Assemble. 
++ [assemble-contrib-markdown](https://api.github.com/repos/assemble/assemble-contrib-markdown): HEADS UP! This isn't ready for prime time! Convert markdown files to HTML using marked.js. This plugin is an alternative to Assemble's markdown Handlebars helpers. Both are useful in different scenarios. 
++ [assemble-contrib-navigation](https://api.github.com/repos/assemble/assemble-contrib-navigation): Assemble plugin for automatically generating Bootstrap-style side navigation.  
++ [assemble-contrib-permalinks](https://api.github.com/repos/assemble/assemble-contrib-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js and Yeoman. This plugin enables powerful and configurable URI replacement patterns, presets, uses Moment.js for parsing dates, and much more. 
++ [assemble-contrib-sitemap](https://api.github.com/repos/assemble/assemble-contrib-sitemap): Sitemap generator plugin for Assemble 
++ [assemble-contrib-toc](https://api.github.com/repos/assemble/assemble-contrib-toc): Create a table of contents in the generated HTML, using Cheerio.js 
++ [assemble-contrib-toc-example](https://api.github.com/repos/assemble/assemble-contrib-toc-example): Example for generating a Table of Contents using Assemble. 
++ [assemble-contrib-wordcount](https://api.github.com/repos/assemble/assemble-contrib-wordcount): Assemble plugin for displaying a word-count on blog posts or pages. 
 
 Visit [assemble.io/plugins](http:/assemble.io/plugins/) for more information about [Assemble](http:/assemble.io/) plugins.
-
 
 
 ## Contributing
 Find a bug? Have a feature request? Please [create an Issue](https://github.com/assemble/assemble-contrib-wordcount/issues).
 
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt][], and build the documentation with [grunt-readme](https://github.com/assemble/grunt-readme).
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality,
+and run `docs` in the command line to build the docs with [Verb](https://github.com/assemble/verb).
 
 Pull requests are also encouraged, and if you find this project useful please consider "starring" it to show your support! Thanks!
-
 
 ## Authors
 
@@ -242,18 +228,13 @@ Pull requests are also encouraged, and if you find this project useful please co
 **Brian Woodward**
 
 + [github/doowb](https://github.com/doowb)
-+ [twitter/doowb](http://twitter.com/jonschlinkert)
++ [twitter/doowb](http://twitter.com/doowb)
 
 
 ## License
-Copyright (c) 2013 Jon Schlinkert, contributors.
+Copyright (c) 2014 Jon Schlinkert, contributors.  
 Released under the MIT license
 
 ***
 
-_This file was generated by [grunt-readme](https://github.com/assemble/grunt-readme) on Friday, December 13, 2013._
-
-[grunt]: http://gruntjs.com/
-[Getting Started]: https://github.com/gruntjs/grunt/blob/devel/docs/getting_started.md
-[package.json]: https://npmjs.org/doc/json.html
-
+_This file was generated by [verb-cli](https://github.com/assemble/verb-cli) on May 01, 2014._

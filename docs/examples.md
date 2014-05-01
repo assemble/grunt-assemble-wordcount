@@ -36,16 +36,13 @@
 The default selector is `.wordcount`. You can change this in the options as follows:
 
 ```js
-assemble: {
-  options: {
-    plugins: ['assemble-contrib-wordcount'],
-    wordcount: {
-      selector: '.foo',
-      countSelector: '.bar'
-      timeSelector: '.baz'
-    }
-  },
-  files: {}
+options: {
+  plugins: ['assemble-contrib-wordcount'],
+  wordcount: {
+    selector: '.foo',
+    countSelector: '.bar'
+    timeSelector: '.baz'
+  }
 }
 ```
 And in your templates:
@@ -69,17 +66,14 @@ Then in `post.hbs`:
 
 ### Display seconds
 
-In the plugin's options in the Assemble task, define `seconds: true`:
+In the plugin's options, define `seconds: true`:
 
 ```js
-assemble: {
-  options: {
-    plugins: ['assemble-contrib-wordcount'],
-    wordcount: {
-      seconds: true
-    }
-  },
-  files: {}
+options: {
+  plugins: ['assemble-contrib-wordcount'],
+  wordcount: {
+    seconds: true
+  }
 }
 ```
 

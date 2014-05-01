@@ -1,31 +1,31 @@
-# {%= name %} [![NPM version](https://badge.fury.io/js/{%= name %}.png)](http://badge.fury.io/js/{%= name %}) {% if (travis) { %} [![Build Status]({%= travis %}.png)]({%= travis %}){% } %}
+# {%= name %} {%= badge("fury") %}
 
 > {%= description %}
 
 ## Quickstart
-{%= _.doc("quickstart.md") %}
+{%= docs("quickstart") %}
 
 ## Options
-{%= _.doc("options.md") %}
+{%= docs("options") %}
 
 ## Usage Examples
-{%= _.doc("examples.md") %}
+{%= docs("examples") %}
 
 ***
 
 ## Assemble plugins
-{%= _.include("related-repos-list.md") %}
+{%= include("assemble/repos-list") %}
 
 ## Contributing
-{%= _.contrib("contributing.md") %}
+{%= contrib("contributing") %}
 
 ## Authors
-{%= _.contrib("authors.md") %}
+{%= contrib("authors") %}
 
 ## License
-{%= copyright %}
-{%= license %}
+{%= copyright() %}
+{%= license() %}
 
 ***
 
-{%= _.include("footer.md") %}
+{%= include("footer") %}
