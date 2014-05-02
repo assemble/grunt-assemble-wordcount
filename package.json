@@ -1,8 +1,8 @@
 {
-  "name": "assemble-contrib-wordcount",
-  "description": "Assemble plugin for displaying wordcount and average reading time on blog posts or pages.",
+  "name": "assemble-middleware-wordcount",
+  "description": "Assemble middleware for displaying wordcount and average reading time on blog posts or pages.",
   "version": "0.4.1",
-  "homepage": "https://github.com/assemble/assemble-contrib-wordcount",
+  "homepage": "https://github.com/assemble/assemble-middleware-wordcount",
   "author": {
     "name": "Jon Schlinkert",
     "url": "http://github.com/jonschlinkert/"
@@ -10,16 +10,16 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/assemble/assemble-contrib-wordcount/blob/master/LICENSE-MIT"
+      "url": "https://github.com/assemble/assemble-middleware-wordcount/blob/master/LICENSE-MIT"
     }
   ],
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/assemble/assemble-contrib-wordcount.git"
+    "url": "git://github.com/assemble/assemble-middleware-wordcount.git"
   },
   "bugs": {
-    "url": "https://github.com/assemble/assemble-contrib-wordcount/issues"
+    "url": "https://github.com/assemble/assemble-middleware-wordcount/issues"
   },
   "engines": {
     "node": ">=0.8"

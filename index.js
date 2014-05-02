@@ -1,9 +1,9 @@
 /**
- * assemble-contrib-wordcount
- * Assemble plugin for rendering the wordcount for
+ * assemble-middleware-wordcount
+ * Assemble middleware for rendering the wordcount for
  * the specified section of content.
  *
- * Copyright (c) 2013 Jon Schlinkert
+ * Copyright (c) 2014 Jon Schlinkert
  * Licensed under the MIT License
  */
 'use strict';
@@ -13,8 +13,8 @@ var log = require('verbalize');
 var _ = require('lodash');
 
 module.exports = function (assemble) {
-  var plugin = function (params, next) {
-    var opts  = assemble.options.wordcount || {};
+  var middleware = function (params, next) {
+    var opts  = assemble.config.wordcount || {};
 
     // See http://onforb.es/1crk3KF
     opts.speed         = opts.speed         || 300;
@@ -24,12 +24,8 @@ module.exports = function (assemble) {
     opts.countSelector = opts.countSelector || '.label-wordcount';
     opts.timeSelector  = opts.timeSelector  || '.label-reading-time';
 
-    // Skip over the plugin if it isn't defined in the options.
-    log.verbose.subhead('Running:'.bold, '"assemble-config-wordcount"');
-    log.verbose.writeln('Stage:  '.bold, '"render:post:page"\n');
-
     // load current page content
-    var $ = cheerio.load(params.page.content);
+    var $ = cheerio.load(params.content);
 
     if($(opts.selector) && $(opts.selector).length > 0) {
       var countable = $(opts.selector);
@@ -62,20 +58,13 @@ module.exports = function (assemble) {
       $(opts.timeSelector).attr('data-reading-time', est);
       $(opts.timeSelector)[opts.placement](est);
 
-      params.page.content = $.html();
+      params.content = $.html();
     }
     next();
   };
 
-  // Define plugin options for Assemble
-  plugin.options = {
-    name: 'assemble-plugin-wordcount',
-    events: [
-      'page:after:render'
-    ]
+  middleware.event = 'page:after:render';
+  return {
+    'assemble-middleware-wordcount': middleware
   };
-
-  var rtn = {};
-  rtn[plugin.options.name] = plugin;
-  return rtn;
 };
