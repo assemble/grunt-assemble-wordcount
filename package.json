@@ -1,7 +1,7 @@
 {
   "name": "assemble-middleware-wordcount",
   "description": "Assemble middleware for displaying wordcount and average reading time on blog posts or pages.",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "homepage": "https://github.com/assemble/assemble-middleware-wordcount",
   "author": {
     "name": "Jon Schlinkert",
