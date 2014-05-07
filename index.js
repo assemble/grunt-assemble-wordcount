@@ -25,7 +25,7 @@ module.exports = function (assemble) {
     opts.timeSelector  = opts.timeSelector  || '.label-reading-time';
 
     // load current page content
-    var $ = cheerio.load(params.content);
+    var $ = cheerio.load(params.page.content);
 
     if($(opts.selector) && $(opts.selector).length > 0) {
       var countable = $(opts.selector);
@@ -58,7 +58,7 @@ module.exports = function (assemble) {
       $(opts.timeSelector).attr('data-reading-time', est);
       $(opts.timeSelector)[opts.placement](est);
 
-      params.content = $.html();
+      params.page.content = $.html();
     }
     next();
   };
