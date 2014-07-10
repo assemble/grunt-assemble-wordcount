@@ -34,7 +34,7 @@ module.exports = function (assemble) {
       var content = countable.html().replace(/(<([^>]+)>)/ig, '');
 
       // Solution from http://drewschrauf.com/blog/2012/06/13/javascript-wordcount-that-works/
-      var matches = content.match(/\S+\s*/g);
+      var matches = content.match(/[\u0400-\u04FF]+|\S+\s*/g);
       var count = matches !== null ? matches.length : 0;
 
       // Calculate reading time
