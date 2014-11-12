@@ -11,6 +11,7 @@
 var cheerio = require('cheerio');
 var log = require('verbalize');
 var _ = require('lodash');
+var wordCount = require('wordcount');
 
 module.exports = function (assemble) {
   var middleware = function (params, next) {
@@ -33,9 +34,7 @@ module.exports = function (assemble) {
       // Strip HTML tags from content
       var content = countable.html().replace(/(<([^>]+)>)/ig, '');
 
-      // Solution from http://drewschrauf.com/blog/2012/06/13/javascript-wordcount-that-works/
-      var matches = content.match(/[\u0400-\u04FF]+|\S+\s*/g);
-      var count = matches !== null ? matches.length : 0;
+      var count = wordCount(content);
 
       // Calculate reading time
       var min, mins, sec, secs, est;

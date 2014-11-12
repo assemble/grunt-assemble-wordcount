@@ -30,6 +30,7 @@
   "dependencies": {
     "lodash": "~2.4.1",
     "cheerio": "~0.15.0",
+    "wordcount": "*",
     "verbalize": "~0.1.2"
   },
   "keywords": [
@@ -42,7 +43,8 @@
     "post",
     "wordcount",
     "reading time",
-    "words"
+    "words",
+    "cyrillic"
   ],
   "devDependencies": {
     "verb": "~0.2.5"
