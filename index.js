@@ -1,10 +1,8 @@
-/**
- * assemble-contrib-wordcount
- * Assemble plugin for rendering the wordcount for
- * the specified section of content.
+/*!
+ * grunt-assemble-wordcount <https://github.com/assemble/grunt-assemble-wordcount>
  *
- * Copyright (c) 2013 Jon Schlinkert
- * Licensed under the MIT License
+ * Copyright (c) 2013-2015, Jon Schlinkert.
+ * Licensed under the MIT License.
  */
 
 var cheerio = require('cheerio');
