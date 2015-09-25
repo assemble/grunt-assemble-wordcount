@@ -220,6 +220,7 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 * [grunt-assemble-lunr](https://www.npmjs.com/package/grunt-assemble-lunr): Assemble plugin for adding search capabilities to your static site, with lunr.js. | [homepage](http://assemble.io)
 * [grunt-assemble-navigation](https://www.npmjs.com/package/grunt-assemble-navigation): Assemble navigation plugin. Automatically generate Bootstrap-style, multi-level side nav. See the sidenav on assemble.io for… [more](https://www.npmjs.com/package/grunt-assemble-navigation) | [homepage](https://github.com/assemble/grunt-assemble-navigation)
 * [grunt-assemble-permalinks](https://www.npmjs.com/package/grunt-assemble-permalinks): Permalinks plugin for Assemble, the static site generator for Grunt.js, Yeoman and Node.js. This plugin… [more](https://www.npmjs.com/package/grunt-assemble-permalinks) | [homepage](https://github.com/assemble/grunt-assemble-permalinks)
+* [grunt-assemble-sitemap](https://www.npmjs.com/package/grunt-assemble-sitemap): Sitemap plugin for Assemble | [homepage](http://assemble.io/plugins)
 * [grunt-assemble-toc](https://www.npmjs.com/package/grunt-assemble-toc): Assemble middleware for adding a Table of Contents (TOC) to any HTML page. | [homepage](http://assemble.io)
 
 ## License
