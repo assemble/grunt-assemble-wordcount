@@ -37,7 +37,7 @@ The default selector is `.wordcount`. You can change this in the options as foll
 
 ```js
 options: {
-  plugins: ['assemble-contrib-wordcount'],
+  plugins: ['grunt-assemble-wordcount'],
   wordcount: {
     selector: '.foo',
     countSelector: '.bar'
@@ -70,7 +70,7 @@ In the plugin's options, define `seconds: true`:
 
 ```js
 options: {
-  plugins: ['assemble-contrib-wordcount'],
+  plugins: ['grunt-assemble-wordcount'],
   wordcount: {
     seconds: true
   }

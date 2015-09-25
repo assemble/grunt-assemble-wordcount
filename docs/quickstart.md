@@ -1,7 +1,7 @@
 In the command line, run:
 
 ```bash
-npm install assemble-contrib-wordcount --save
+npm install grunt-assemble-wordcount --save
 ```
 
 Next, register the plugin with Assemble:
@@ -9,9 +9,9 @@ Next, register the plugin with Assemble:
 ```js
 assemble: {
   options: {
-    middleware: ['{%= name %}', 'other/middleware/*']
+    plugins: ['{%= name %}', 'other/plugins/*']
   }
 }
 ```
 
-Visit the [middleware docs](http://assemble.io/middleware/) for more info or for help getting started.
+Visit the [plugins docs](http://assemble.io/plugins/) for more info or for help getting started.
