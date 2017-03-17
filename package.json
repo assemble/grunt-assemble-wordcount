@@ -22,7 +22,7 @@
     "node": ">=0.8"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "dependencies": {
     "lodash": "~2.4.1",
