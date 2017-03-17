@@ -4,17 +4,16 @@
   "version": "0.1.0",
   "homepage": "https://github.com/assemble/grunt-assemble-wordcount",
   "author": "Jon Schlinkert (http://github.com/jonschlinkert)",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/assemble/grunt-assemble-wordcount.git"
-  },
+  "contributors": [
+    "Brian Woodward <brian.woodward@gmail.com> (https://twitter.com/doowb)",
+    "Charlike Mike Reagent (https://i.am.charlike.online)",
+    "Jon Schlinkert <jon.schlinkert@sellside.com> (http://twitter.com/jonschlinkert)"
+  ],
+  "repository": "assemble/grunt-assemble-wordcount",
   "bugs": {
     "url": "https://github.com/assemble/grunt-assemble-wordcount/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/assemble/grunt-assemble-wordcount/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
@@ -30,16 +29,22 @@
     "cheerio": "~0.15.0",
     "verbalize": "~0.1.2"
   },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-assemble": "^0.6.3",
+    "grunt-contrib-clean": "^1.0.0",
+    "gruntify-eslint": "^3.1.0"
+  },
   "keywords": [
     "assemble",
-    "assembleplugin",
     "assemblemiddleware",
-    "middleware",
+    "assembleplugin",
     "blog",
     "grunt",
+    "middleware",
     "post",
-    "wordcount",
     "reading time",
+    "wordcount",
     "words"
   ],
   "verb": {
