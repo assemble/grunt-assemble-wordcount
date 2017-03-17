@@ -22,7 +22,7 @@
     "node": ">=0.10"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt test"
   },
   "dependencies": {
     "cheerio": "^0.22.0",

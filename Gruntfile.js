@@ -48,7 +48,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-assemble');
 
   grunt.registerTask('lint', ['eslint']);
+  grunt.registerTask('test', ['clean', 'assemble']);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['lint', 'clean', 'assemble']);
+  grunt.registerTask('default', ['lint', 'test']);
 };
