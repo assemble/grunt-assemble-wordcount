@@ -1,7 +1,7 @@
 {
   "name": "grunt-assemble-wordcount",
   "description": "Assemble plugin for displaying wordcount and average reading time to blog posts or pages.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/assemble/grunt-assemble-wordcount",
   "author": "Jon Schlinkert (http://github.com/jonschlinkert)",
   "contributors": [
@@ -26,8 +26,6 @@
   },
   "dependencies": {
     "cheerio": "~0.15.0",
-    "lodash": "~2.4.1",
-    "verbalize": "~0.1.2",
     "wordcount": "^1.1.1"
   },
   "devDependencies": {
