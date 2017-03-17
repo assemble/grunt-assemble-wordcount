@@ -20,7 +20,9 @@ module.exports = function(grunt) {
 
     assemble: {
       options: {
-        plugins: ['index.js']
+        plugins: ['index.js'],
+        layout: 'default.hbs',
+        layoutdir: 'test/fixtures/layouts'
       },
       wordcount: {
         files: [
